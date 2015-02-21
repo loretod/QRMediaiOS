@@ -12,7 +12,7 @@ import UIKit
 class VideoRecordViewController: UIViewController {
     
 
-    @IBOutlet weak var showVideoReview: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

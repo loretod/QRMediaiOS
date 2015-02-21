@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8ce-3q-ewj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Media-->
@@ -16,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVM-gc-zfX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVM-gc-zfX">
                                 <rect key="frame" x="123" y="127" width="355" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="355" id="6pK-2M-o2y"/>
+                                </constraints>
                                 <state key="normal" image="audioButton.gif">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,7 +29,7 @@
                                     <segue destination="yjH-tS-xAL" kind="show" id="hbH-bI-NJo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-8j-i2w">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bx-8j-i2w">
                                 <rect key="frame" x="150" y="323" width="300" height="150"/>
                                 <state key="normal" image="videoButton.gif">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,6 +40,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47843140360000003" green="0.5647059083" blue="0.031372550870000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Bx-8j-i2w" firstAttribute="top" secondItem="YVM-gc-zfX" secondAttribute="bottom" constant="46" id="JWx-Hz-NEa"/>
+                            <constraint firstItem="8Bx-8j-i2w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Unw-Xf-vBO"/>
+                            <constraint firstItem="YVM-gc-zfX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="63" id="ZFm-Fz-Qdn"/>
+                            <constraint firstItem="8Bx-8j-i2w" firstAttribute="centerX" secondItem="YVM-gc-zfX" secondAttribute="centerX" id="vqk-qf-BrW"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Ghv-tc-Lr2"/>
                     <navigationItem key="navigationItem" id="dtN-en-F5q"/>
@@ -59,137 +69,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record your audio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOQ-eL-Szj">
-                                <rect key="frame" x="39" y="99" width="213" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record your audio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOQ-eL-Szj">
+                                <rect key="frame" x="41" y="99" width="213" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="IqZ-GC-ulW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrb-ML-UA6">
-                                <rect key="frame" x="277" y="344" width="50" height="30"/>
-                                <state key="normal" title="Record">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrb-ML-UA6">
+                                <rect key="frame" x="268" y="244" width="69" height="100"/>
+                                <state key="normal" image="audio.gif">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="record" destination="yjH-tS-xAL" eventType="touchUpInside" id="qJs-tK-HCD"/>
+                                    <action selector="recordButton:" destination="yjH-tS-xAL" eventType="touchUpInside" id="jJG-xB-6J8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81c-Ug-P6U">
-                                <rect key="frame" x="279" y="390" width="43" height="30"/>
-                                <state key="normal" title="Pause">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNs-h0-IDw">
-                                <rect key="frame" x="277" y="435" width="62" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryz-k9-2Bv">
-                                <rect key="frame" x="187" y="503" width="65" height="30"/>
-                                <state key="normal" title="Review">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81c-Ug-P6U">
+                                <rect key="frame" x="279" y="368" width="43" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="CSm-m5-ShZ"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tKO-PH-E2e" kind="show" id="Q3m-og-xm7"/>
+                                    <action selector="stopButton:" destination="yjH-tS-xAL" eventType="touchUpInside" id="QYT-LA-kYg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.39999999999999963" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryz-k9-2Bv">
+                                <rect key="frame" x="244" y="520" width="146" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.98039215690000003" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="h2C-Cp-0wh"/>
+                                </constraints>
+                                <state key="normal" title="Generate Code &gt;">
+                                    <color key="titleColor" red="0.40784313729999999" green="0.50196078430000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IRr-c3-U10" kind="show" identifier="showQRCode" id="yMQ-Fn-lg9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-QM-ye4">
+                                <rect key="frame" x="281" y="444" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNs-h0-IDw">
+                                <rect key="frame" x="269" y="406" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="tUl-48-oNH"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButton:" destination="yjH-tS-xAL" eventType="touchUpInside" id="ZIT-fq-W5f"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47843140363693237" green="0.56470590829849243" blue="0.031372550874948502" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="mOQ-eL-Szj" firstAttribute="top" secondItem="UDj-ZF-YuC" secondAttribute="bottom" constant="35" id="A01-ec-Ayj"/>
+                            <constraint firstItem="CM0-ag-lPX" firstAttribute="top" secondItem="ryz-k9-2Bv" secondAttribute="bottom" constant="50" id="VkL-vO-KRg"/>
+                            <constraint firstItem="mOQ-eL-Szj" firstAttribute="leading" secondItem="bWw-39-EYs" secondAttribute="leadingMargin" constant="25" id="Xpv-3P-odK"/>
+                            <constraint firstItem="Htd-QM-ye4" firstAttribute="centerX" secondItem="Jrb-ML-UA6" secondAttribute="centerX" id="aho-Nu-CVq"/>
+                            <constraint firstItem="tNs-h0-IDw" firstAttribute="top" secondItem="81c-Ug-P6U" secondAttribute="bottom" constant="8" symbolic="YES" id="bTn-ge-JSV"/>
+                            <constraint firstItem="tNs-h0-IDw" firstAttribute="centerX" secondItem="bWw-39-EYs" secondAttribute="centerX" id="nEs-WH-KgD"/>
+                            <constraint firstItem="Htd-QM-ye4" firstAttribute="top" secondItem="tNs-h0-IDw" secondAttribute="bottom" constant="8" symbolic="YES" id="rwV-wk-YTb"/>
+                            <constraint firstItem="tNs-h0-IDw" firstAttribute="centerX" secondItem="81c-Ug-P6U" secondAttribute="centerX" id="vXm-rT-lWM"/>
+                            <constraint firstItem="ryz-k9-2Bv" firstAttribute="top" secondItem="Htd-QM-ye4" secondAttribute="bottom" constant="55" id="wfZ-0u-Gjd"/>
+                            <constraint firstItem="81c-Ug-P6U" firstAttribute="top" secondItem="Jrb-ML-UA6" secondAttribute="bottom" constant="24" id="xk5-jC-S3e"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TEd-bW-oZ2"/>
                     <connections>
-                        <outlet property="cancelAudio" destination="tNs-h0-IDw" id="NkC-cU-KkV"/>
-                        <outlet property="pauseAudio" destination="81c-Ug-P6U" id="DRa-Xj-Pvd"/>
-                        <outlet property="showAudioReview" destination="ryz-k9-2Bv" id="Wmp-BM-3m3"/>
+                        <outlet property="audioTime" destination="Htd-QM-ye4" id="1eU-xe-Ulb"/>
+                        <outlet property="playButton" destination="tNs-h0-IDw" id="mn3-Oa-idq"/>
+                        <outlet property="recordButton" destination="Jrb-ML-UA6" id="oFj-bn-pO1"/>
+                        <outlet property="stopButton" destination="81c-Ug-P6U" id="hJH-WR-cTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ito-3r-WB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2319" y="-292"/>
-        </scene>
-        <!--Audio Review View Controller-->
-        <scene sceneID="pCI-83-7oi">
-            <objects>
-                <viewController id="tKO-PH-E2e" customClass="AudioReviewViewController" customModule="QRMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0hc-I8-y5w"/>
-                        <viewControllerLayoutGuide type="bottom" id="lQt-Yh-lQ2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q5m-mh-8NS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Review your audio:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-CX-fkn">
-                                <rect key="frame" x="16" y="94" width="213" height="25"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIo-8j-2pE">
-                                <rect key="frame" x="177" y="511" width="52" height="30"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="IRr-c3-U10" kind="show" id="rg5-L0-oJK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.40784313725490196" green="0.50196078431372548" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="showQRConvert" destination="VIo-8j-2pE" id="s2s-Dm-LUm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N4d-7h-oqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3037" y="-292"/>
-        </scene>
-        <!--Video Review View Controller-->
-        <scene sceneID="z7d-kn-Hl1">
-            <objects>
-                <viewController id="Hea-dB-C1Q" customClass="VideoReviewViewController" customModule="QRMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Lyb-HH-CbO"/>
-                        <viewControllerLayoutGuide type="bottom" id="7T0-J0-fFz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pnw-Ey-nIP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Review your video:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-F3-6gI">
-                                <rect key="frame" x="14" y="95" width="259" height="25"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-sL-EQ8">
-                                <rect key="frame" x="135" y="486" width="46" height="30"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="IRr-c3-U10" kind="show" id="Su8-Iu-3bW"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.47843140360000003" green="0.5647059083" blue="0.031372550870000002" alpha="1" colorSpace="deviceRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="showQRCode" destination="j7O-sL-EQ8" id="GBW-pP-16N"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lPX-Rr-2Pr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3037" y="379"/>
         </scene>
         <!--QR Code-->
         <scene sceneID="kNZ-cz-h3K">
@@ -203,10 +173,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qr_icon.gif" translatesAutoresizingMaskIntoConstraints="NO" id="94O-qX-ixt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr_icon.gif" translatesAutoresizingMaskIntoConstraints="NO" id="94O-qX-ixt">
                                 <rect key="frame" x="180" y="227" width="241" height="227"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here is your code!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSW-Cr-BWQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Here is your code!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSW-Cr-BWQ">
                                 <rect key="frame" x="231" y="149" width="139" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,11 +184,19 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.47843140360000003" green="0.5647059083" blue="0.031372550870000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="94O-qX-ixt" firstAttribute="leading" secondItem="ZTl-Xt-l7X" secondAttribute="leadingMargin" constant="164" id="6ok-ln-zYc"/>
+                            <constraint firstAttribute="centerY" secondItem="HSW-Cr-BWQ" secondAttribute="centerY" constant="140.5" id="JfH-0H-Vb8"/>
+                            <constraint firstAttribute="centerY" secondItem="94O-qX-ixt" secondAttribute="centerY" constant="-40.5" id="Jzn-Bv-mlU"/>
+                            <constraint firstAttribute="centerX" secondItem="HSW-Cr-BWQ" secondAttribute="centerX" constant="-0.5" id="XkU-vo-FOA"/>
+                            <constraint firstAttribute="centerX" secondItem="94O-qX-ixt" secondAttribute="centerX" constant="-0.5" id="fkh-ea-NOP"/>
+                            <constraint firstItem="94O-qX-ixt" firstAttribute="top" secondItem="dW2-s3-lKT" secondAttribute="bottom" constant="163" id="lg6-p1-aRu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KY5-DM-foQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3808" y="59"/>
+            <point key="canvasLocation" x="3080" y="26"/>
         </scene>
         <!--Video Record-->
         <scene sceneID="BgQ-He-X5j">
@@ -238,17 +216,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuQ-9y-hsP">
-                                <rect key="frame" x="258" y="500" width="85" height="30"/>
+                            <button opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuQ-9y-hsP">
+                                <rect key="frame" x="205" y="515" width="132" height="30"/>
+                                <color key="backgroundColor" red="0.89019614459999996" green="0.93333339689999995" blue="0.44313728810000003" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Review &gt; ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Generate Code &gt; ">
+                                    <color key="titleColor" red="0.40784313729999999" green="0.50196078430000002" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hea-dB-C1Q" kind="show" id="mF6-Af-f2P"/>
+                                    <segue destination="IRr-c3-U10" kind="show" identifier="showQRCode" id="Me3-3D-8bH"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D84-du-UOI">
+                                <rect key="frame" x="152" y="159" width="296" height="211"/>
+                                <connections>
+                                    <segue destination="LwX-K4-9DE" kind="embed" id="yef-dy-NFe"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.47843140360000003" green="0.5647059083" blue="0.031372550870000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -263,7 +248,6 @@
         <!--Navigation Controller-->
         <scene sceneID="bm5-F4-gGs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4MT-de-QlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ce-3q-ewj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ryw-DZ-ihC">
@@ -275,16 +259,36 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gru-t5-qss"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4MT-de-QlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="468" y="91"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Mwe-C0-bA9">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="LwX-K4-9DE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R6u-U4-WsT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nc3-Qk-24O"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ALc-Q3-bDB">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="211"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LyB-Fj-RYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
+        <image name="audio.gif" width="69" height="100"/>
         <image name="audioButton.gif" width="300" height="150"/>
         <image name="qr_icon.gif" width="50" height="50"/>
         <image name="videoButton.gif" width="300" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rg5-L0-oJK"/>
+        <segue reference="Me3-3D-8bH"/>
     </inferredMetricsTieBreakers>
 </document>
